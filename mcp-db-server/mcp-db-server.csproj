@@ -13,7 +13,11 @@
     <PackageReference Include="Npgsql" Version="10.0.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
     <PackageReference Include="System.Text.Json" Version="10.0.1" />
-    <PackageReference Include="ModelContextProtocol.AspNetCore" Version="*" Condition="false" />
+    <PackageReference Include="ModelContextProtocol.AspNetCore" Version="0.5.0-preview.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="src\Utilities\" />
   </ItemGroup>
 
 </Project>

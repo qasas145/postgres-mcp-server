@@ -19,7 +19,21 @@ namespace MCPDatabaseServer.Database
 
         private string BuildConnectionString()
         {
-            var connectionString = "Server=34.173.168.133;Database=staging;Username=proximity-dev-user;Password=TrmOabTZ/nn)rqZ9;Timeout=900;CommandTimeout=900";
+            // Try to get from DATABASE_URL env variable first
+            var databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+            if (!string.IsNullOrEmpty(databaseUrl))
+            {
+                return databaseUrl;
+            }
+
+            // Fallback to individual environment variables
+            var host = Environment.GetEnvironmentVariable("DB_HOST") ?? "localhost";
+            var port = Environment.GetEnvironmentVariable("DB_PORT") ?? "5432";
+            var database = Environment.GetEnvironmentVariable("DB_NAME") ?? "postgres";
+            var username = Environment.GetEnvironmentVariable("DB_USER") ?? "postgres";
+            var password = Environment.GetEnvironmentVariable("DB_PASSWORD") ?? "";
+
+            var connectionString = $"Server={host};Port={port};Database={database};Username={username};Password={password};Timeout=900;CommandTimeout=900";
             return connectionString;
         }
 

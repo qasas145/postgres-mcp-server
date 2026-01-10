@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using MCPDatabaseServer.Database;
+using ModelContextProtocol.Server;
 using System.ComponentModel;
 
 namespace MCPDatabaseServer.Controllers
@@ -7,6 +8,7 @@ namespace MCPDatabaseServer.Controllers
     [ApiController]
     [Route("api/database")]
     [Produces("application/json")]
+    [McpServerToolType]
     public class DatabaseController : ControllerBase
     {
         private readonly DatabaseManager _db;
@@ -22,6 +24,7 @@ namespace MCPDatabaseServer.Controllers
         /// Get all available schemas
         /// </summary>
         [HttpGet("schemas")]
+        [McpServerTool]
         [Description("List all database schemas")]
         public async Task<IActionResult> GetSchemas()
         {
@@ -41,6 +44,7 @@ namespace MCPDatabaseServer.Controllers
         /// Get all tables in a schema
         /// </summary>
         [HttpGet("tables")]
+        [McpServerTool]
         [Description("List all tables in a schema")]
         public async Task<IActionResult> GetTables([FromQuery] string? schema = "public")
         {
@@ -69,6 +73,7 @@ namespace MCPDatabaseServer.Controllers
         /// Get table structure (columns)
         /// </summary>
         [HttpGet("tables/{tableName}")]
+        [McpServerTool]
         [Description("Get table structure and columns")]
         public async Task<IActionResult> GetTableColumns(string tableName, [FromQuery] string? schema = "public")
         {
@@ -101,6 +106,7 @@ namespace MCPDatabaseServer.Controllers
         /// Get table DDL definition
         /// </summary>
         [HttpGet("tables/{tableName}/definition")]
+        [McpServerTool]
         [Description("Get table CREATE statement")]
         public async Task<IActionResult> GetTableDefinition(string tableName, [FromQuery] string? schema = "public")
         {
@@ -120,6 +126,7 @@ namespace MCPDatabaseServer.Controllers
         /// Get all functions/procedures in a schema
         /// </summary>
         [HttpGet("functions")]
+        [McpServerTool]
         [Description("List all functions and procedures in a schema")]
         public async Task<IActionResult> GetFunctions([FromQuery] string? schema = "public")
         {
@@ -150,6 +157,7 @@ namespace MCPDatabaseServer.Controllers
         /// Get function/procedure definition
         /// </summary>
         [HttpGet("functions/{functionName}")]
+        [McpServerTool]
         [Description("Get function or procedure definition")]
         public async Task<IActionResult> GetFunctionDefinition(string functionName, [FromQuery] string? schema = "public")
         {
@@ -169,6 +177,7 @@ namespace MCPDatabaseServer.Controllers
         /// Execute a custom SQL query
         /// </summary>
         [HttpPost("query")]
+        [McpServerTool]
         [Description("Execute a custom SQL query and return results")]
         public async Task<IActionResult> ExecuteQuery([FromBody] QueryRequest request)
         {
@@ -199,6 +208,7 @@ namespace MCPDatabaseServer.Controllers
         /// Get table foreign keys
         /// </summary>
         [HttpGet("tables/{tableName}/foreignkeys")]
+        [McpServerTool]
         [Description("Get foreign key constraints for a table")]
         public async Task<IActionResult> GetForeignKeys(string tableName, [FromQuery] string? schema = "public")
         {

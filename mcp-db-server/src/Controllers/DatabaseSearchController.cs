@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MCPDatabaseServer.Database;
 using MCPDatabaseServer.Models;
+using ModelContextProtocol.Server;
 using System.ComponentModel;
 
 namespace MCPDatabaseServer.Controllers
@@ -8,6 +9,7 @@ namespace MCPDatabaseServer.Controllers
     [ApiController]
     [Route("api/search")]
     [Produces("application/json")]
+    [McpServerToolType]
     public class DatabaseSearchController : ControllerBase
     {
         private readonly DatabaseManager _db;
@@ -24,6 +26,7 @@ namespace MCPDatabaseServer.Controllers
         /// Similar to DBeaver's DB Metadata search
         /// </summary>
         [HttpGet("metadata")]
+        [McpServerTool]
         [Description("Search for database objects: tables, columns, functions, procedures, constraints, and data types")]
         public async Task<IActionResult> SearchMetadata(
             [FromQuery] string keyword,
@@ -70,6 +73,7 @@ namespace MCPDatabaseServer.Controllers
         /// Similar to DBeaver's DB Full-Text search
         /// </summary>
         [HttpPost("fulltext")]
+        [McpServerTool]
         [Description("Search for text within database table content using PostgreSQL full-text search")]
         public async Task<IActionResult> SearchFullText(
             [FromBody] FullTextSearchRequest request)
@@ -108,6 +112,7 @@ namespace MCPDatabaseServer.Controllers
         /// Similar to searching within stored procedure bodies in DBeaver
         /// </summary>
         [HttpGet("functions/source")]
+        [McpServerTool]
         [Description("Search within function and procedure source code")]
         public async Task<IActionResult> SearchFunctionSource(
             [FromQuery] string keyword,
@@ -141,6 +146,7 @@ namespace MCPDatabaseServer.Controllers
         /// Advanced search combining multiple criteria
         /// </summary>
         [HttpPost("advanced")]
+        [McpServerTool]
         [Description("Advanced search with multiple criteria across all database objects")]
         public async Task<IActionResult> AdvancedSearch([FromBody] AdvancedSearchRequest request)
         {
