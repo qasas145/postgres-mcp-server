@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "aNlMD+IAG/w=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\hp\\Desktop\\programming\\DotNet projects\\MCP\\mcp-db-server\\mcp-db-server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.0\\microsoft.aspnetcore.openapi.8.0.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\npgsql\\10.0.1\\npgsql.10.0.1.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\system.diagnostics.diagnosticsource\\9.0.11\\system.diagnostics.diagnosticsource.9.0.11.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\system.io.pipelines\\10.0.1\\system.io.pipelines.10.0.1.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\system.text.encodings.web\\10.0.1\\system.text.encodings.web.10.0.1.nupkg.sha512",
+    "C:\\Users\\hp\\.nuget\\packages\\system.text.json\\10.0.1\\system.text.json.10.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
