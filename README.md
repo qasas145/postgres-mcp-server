@@ -201,10 +201,27 @@ Create or update `.vscode/mcp.json`:
 
 ```json
 {
-  "postgres-mcp": {
+  "servers": {
+    "postgres-mcp": {
 			"url": "http://localhost:5004/",
 			"type": "http"
-	}
+		},
+  }
+}
+```
+
+### For Claude Desktop
+
+Add to Claude Desktop configuration:
+
+```json
+{
+  "servers": {
+    "postgres-mcp": {
+			"url": "http://localhost:5004/",
+			"type": "http"
+		},
+  }
 }
 ```
 
