@@ -201,33 +201,10 @@ Create or update `.vscode/mcp.json`:
 
 ```json
 {
-  "mcpServers": {
-    "postgres-db-server": {
-      "command": "dotnet",
-      "args": ["run", "--project", "./mcp-db-server/mcp-db-server.csproj"],
-      "env": {
-        "DATABASE_URL": "postgresql://user:pass@localhost:5432/dbname"
-      }
-    }
-  }
-}
-```
-
-### For Claude Desktop
-
-Add to Claude Desktop configuration:
-
-```json
-{
-  "mcpServers": {
-    "postgres-db": {
-      "command": "dotnet",
-      "args": ["run", "--project", "/path/to/mcp-db-server/mcp-db-server.csproj"],
-      "env": {
-        "DATABASE_URL": "postgresql://user:pass@localhost:5432/dbname"
-      }
-    }
-  }
+  "postgres-mcp": {
+			"url": "http://localhost:5004/",
+			"type": "http"
+	}
 }
 ```
 
